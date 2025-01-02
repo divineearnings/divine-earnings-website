@@ -1,89 +1,149 @@
+/* General Body and HTML Styles */
 body {
-    background-color: #e0d4f8; /* Slightly darker purple */
+    background-color: #6F63E7; /* Purple background matching branding */
+    font-family: 'Avenir Next World', sans-serif; /* Avenir Next World font */
+    margin: 0;
+    padding: 0;
+    color: #000000; /* Black text for readability */
+    text-align: center; /* Center all text */
 }
 
 html {
-    scroll-behavior: smooth; /* Smooth scrolling */
+    scroll-behavior: smooth; /* Smooth scrolling for navigation */
 }
 
-
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #6F63E7; /* Purple background from the logo */
-    color: #000000; /* Black text from the logo */
-}
-
-.logo {
-    text-align: center;
-}
-
+/* Reset unwanted styles */
 .logo img {
-    margin-bottom: 1rem;
+    display: block; /* Remove any inline gaps caused by default 'inline' display */
+    margin: 0; /* Reset any default margin */
+    padding: 0; /* Reset any padding */
 }
 
-h1, h2 {
-    font-weight: bold;
+/* Flexbox to center */
+.logo {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    width: 100%; /* Ensure the container spans full width */
+    height: 150px; /* Adjust height based on your design */
+    margin: 0 auto; /* Center the container itself */
+}
+
+/* Ensure sizing consistency */
+.logo img {
+    max-width: 100%; /* Prevent overflow */
+    max-height: 100%; /* Fit within the container */
+    height: auto; /* Maintain aspect ratio */
+    width: auto; /* Maintain aspect ratio */
+}
+
+.social-item p {
+    font-size: 0.85em; /* Adjust the size as needed */
+    line-height: 1.2; /* Optional: Adjust the line height for better spacing */
+}
+
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+    .logo {
+        height: 120px; /* Adjust container height for mobile */
+    }
+
+    .logo img {
+        max-width: 80%; /* Make the logo slightly smaller on smaller screens */
+    }
+}
+
+
+
+/* Headings and Paragraphs */
+h2 {
+    color: #6F63E7;
+    border-bottom: 2px solid #6F63E7;
+    padding-bottom: 0.5rem;
 }
 
 p {
     font-size: 1rem;
     line-height: 1.6;
+    margin-bottom: 1rem;
 }
+
 
 /* Header Styles */
 header {
-    background-color: #000000; /* Black header for contrast */
+    background-color: #000000; /* Black for contrast */
     color: #FFFFFF;
-    text-align: center;
+    text-align: center; /* Center header content */
     padding: 1rem;
+    margin-bottom: 1rem;
 }
 
 header nav a {
     color: #FFFFFF;
     text-decoration: none;
     margin: 0 1rem;
+    transition: color 0.3s ease;
 }
 
-header {
-    margin-bottom: 1rem;
-}
-
-section {
-    padding: 2rem 0;
-}
-
-nav a:hover {
+header nav a:hover {
     text-decoration: underline;
-    color: #fff;
 }
 
-/* Main Content Styles */
+/* Main Content Styling */
 main {
     padding: 2rem;
-    max-width: 800px;
-    margin: auto;
-    background: #FFFFFF; /* White for readability */
+    max-width: 800px; /* Adjust width to your preference */
+    margin: 0 auto; /* Center the content horizontally */
+    background: #FFFFFF; /* White background for main content */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Section Styles */
+/* Section Styling */
 section {
     margin-bottom: 2rem;
+    padding: 2rem;
+    background-color: #F5F5FF; /* Light purple for visual separation */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center; /* Center text within sections */
 }
 
-h2 {
-    color: #6F63E7; /* Purple headings for branding */
-    border-bottom: 2px solid #6F63E7;
-    padding-bottom: 0.5rem;
+/* Navigation Bar Styles */
+nav {
+    background-color: #6F63E7;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+nav ul li a:hover {
+    background-color: #5749c4; /* Slightly darker purple */
+}
+
+/* Lists */
 ul {
     list-style: none;
     padding: 0;
+    text-align: center; /* Center list items */
 }
 
 ul li {
@@ -99,7 +159,7 @@ ul li:before {
     left: 0;
 }
 
-/* Button Styles */
+/* Buttons */
 a.btn {
     display: inline-block;
     margin-top: 1rem;
@@ -109,13 +169,14 @@ a.btn {
     text-decoration: none;
     border-radius: 4px;
     transition: background-color 0.3s ease;
+    text-align: center;
 }
 
 a.btn:hover {
-    background-color: #5749c4; /* Slightly darker purple on hover */
+    background-color: #5749c4; /* Slightly darker purple */
 }
 
-/* Footer Styles */
+/* Footer */
 footer {
     text-align: center;
     padding: 1rem;
@@ -124,86 +185,44 @@ footer {
     margin-top: 2rem;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    main {
-        padding: 1rem;
-    }
-}
-
-/* Social Links Section */
-#contact {
-    margin: 2rem 0;
-    padding: 2rem;
-    background-color: #F5F5FF;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-
-
-#contact h2 {
-    color: #6F63E7; /* Purple branding */
-    margin-bottom: 1rem;
-}
-
-#contact p {
-    margin-bottom: 1.5rem;
-    color: #000000;
-}
-
-/* Styling for the social icons container */
+/* Social Icons */
 .social-icons {
     display: flex;
     justify-content: center;
-    gap: 1.5rem; /* Adjust the space between the icons */
+    gap: 1.5rem;
     margin-top: 1rem;
 }
 
-/* Styling for the icons */
 .social-icons a img {
-    width: 40px; /* Set the size of the icons */
+    width: 40px;
     height: 40px;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Hover effect for icons */
 .social-icons a img:hover {
-    transform: scale(1.2); /* Slightly enlarge on hover */
-    opacity: 0.8; /* Add transparency on hover */
+    transform: scale(1.2);
+    opacity: 0.8;
 }
 
-
-
-.whatsapp-link {
-    color: #25D366; /* WhatsApp green */
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.whatsapp-link:hover {
-    text-decoration: underline;
-}
-
-/* Section Styles */
-section {
-    margin-bottom: 2rem;
-}
-
-/* What We Offer Section Styles */
-#offers {
-    text-align: center;
+/* Membership Cards */
+.membership-container {
+    display: flex;
+    justify-content: center; /* Center membership cards */
+    gap: 2rem;
+    margin-top: 1rem;
+    flex-wrap: wrap; /* For responsiveness */
 }
 
 .membership-container {
     display: flex;
-    justify-content: space-between;
-    gap: 2rem;
-    margin-top: 1rem;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
-
+.membership {
+    flex: 1;
+    min-width: 300px;
+}
 
 .membership {
     flex: 1;
@@ -213,133 +232,29 @@ section {
     padding: 1.5rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     display: flex;
-    flex-direction: column; /* Ensures consistent vertical alignment */
-    justify-content: space-between; /* Space out content and button */
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center; /* Center text within cards */
 }
 
 .membership:hover {
-    transform: translateY(-5px); /* Lifts the card on hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhances shadow on hover */
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-.membership h3 {
-    margin-bottom: 10px; /* Space below the heading */
-    font-size: 1.5rem; /* Adjust heading size */
-    color: #5e35b1; /* Matches your site’s theme */
-    text-align: center; /* Center aligns the title */
-}
+/* Responsive Design */
+@media (max-width: 480px) {
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
 
-.membership ul {
-    margin: 0;
-    padding-left: 20px; /* Adds spacing for list items */
-}
+    main {
+        padding: 1rem;
+    }
 
-.membership ul li {
-    margin-bottom: 0.5rem;
-}
-
-.membership ul li:before {
-    content: "•";
-    color: #6F63E7; /* Purple bullet points */
-    position: absolute;
-    left: 0;
-}
-
-.membership button {
-    display: block; /* Centers the button */
-    margin: 20px auto 0; /* Adds spacing and centers it */
-    padding: 10px 20px;
-    background-color: #5e35b1;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    cursor: pointer;
-}
-
-.membership button:hover {
-    background-color: #4527a0; /* Darker shade on hover */
-}
-
-@media (max-width: 768px) {
     .membership-container {
         flex-direction: column;
-        align-items: center;
     }
-}
-
-/* Navigation Bar Styles */
-nav {
-    background-color: #6F63E7; /* Purple for branding */
-    color: #FFFFFF;
-    display: flex;
-    justify-content: center;
-    padding: 1rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 1rem;
-}
-
-nav ul li a {
-    color: #FFFFFF;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
-
-nav ul li a:hover {
-    background-color: #5749c4; /* Slightly darker purple */
-}
-
-.who-we-are {
-    text-align: center; /* Centers the text */
-    padding: 2rem;
-    margin: 0 auto;
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #000000; /* Black text */
-    background-color: #F5F5FF; /* Light purple background */
-    border-radius: 8px; /* Slightly rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-}
-
-
-.who-we-are h2 {
-    font-size: 2rem; /* Adjusts the heading size */
-    color: #5e35b1; /* Matches your site’s theme */
-    margin-bottom: 1rem; /* Space below the heading */
-}
-
-.who-we-are p {
-    margin-bottom: 0.5rem; /* Adds space between paragraphs */
-}
-
-/* General Section Styling */
-section {
-    margin: 1.5rem auto; /* Adjusts spacing around sections */
-    padding: 1.5rem; /* Reduces padding inside sections */
-}
-
-/* Specific to the "Who We Are" Section */
-#who-we-are {
-    margin-top: 1rem; /* Reduces space above */
-    padding: 1.5rem; /* Adjusts inner spacing */
-}
-
-/* "What We Offer" Columns */
-.membership-column {
-    margin-top: 1rem; /* Reduces space above each column */
-    padding: 1rem; /* Adjusts inner padding */
-}
-
-/* Subscription Button Alignment */
-.subscription-button {
-    margin-top: 1rem; /* Keeps button spacing balanced */
 }
