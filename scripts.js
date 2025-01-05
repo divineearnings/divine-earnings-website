@@ -7,5 +7,28 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+const sections = document.querySelectorAll("section");
 
+const fadeInOnScroll = () => {
+    sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+            section.classList.add("visible");
+        }
+    });
+};
+
+window.addEventListener("scroll", fadeInOnScroll);
+fadeInOnScroll(); // Run on page load
+
+const cards = document.querySelectorAll(".membership");
+
+cards.forEach((card) => {
+    card.addEventListener("mouseenter", () => {
+        card.classList.add("hover");
+    });
+    card.addEventListener("mouseleave", () => {
+        card.classList.remove("hover");
+    });
+});
 
