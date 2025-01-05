@@ -94,9 +94,18 @@ nav {
 nav ul {
     list-style: none;
     display: flex;
+    justify-content: center; /* Ensures items are centered */
+    align-items: center;
     gap: 2rem;
     padding: 0;
     margin: 0;
+    width: 100%; /* Makes sure the list takes up full width */
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block; /* Ensures inline positioning */
+    text-align: center;
 }
 
 nav ul li a {
