@@ -1,15 +1,16 @@
 /* General Body and HTML Styles */
 body {
-    background-color: #6F63E7; /* Purple background matching branding */
-    font-family: 'Avenir Next World', sans-serif; /* Avenir Next World font */
+    background-color: #6F63E7;
+    font-family: 'Avenir Next World', sans-serif;
     margin: 0;
     padding: 0;
-    color: #000000; /* Black text for readability */
-    text-align: center; /* Center all text */
+    color: #000000;
+    text-align: center;
 }
 
 html {
-    scroll-behavior: smooth; /* Smooth scrolling for navigation */
+    scroll-behavior: smooth;
+    overflow-y: scroll;
 }
 
 /* Logo Styling */
@@ -17,7 +18,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%; 
+    width: 100%;
     height: 150px;
     margin: 0 auto;
 }
@@ -89,22 +90,25 @@ nav {
     align-items: center;
     padding: 1rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: center; /* Ensures items are centered */
+    justify-content: center;
     align-items: center;
     gap: 2rem;
     padding: 0;
     margin: 0;
-    width: 100%; /* Makes sure the list takes up full width */
+    width: 100%;
     text-align: center;
 }
 
 nav ul li {
-    display: inline-block; /* Ensures inline positioning */
+    display: inline-block;
     text-align: center;
 }
 
@@ -208,17 +212,21 @@ footer {
 }
 
 /* Membership Cards */
+/* Adjust the membership-container styles */
 .membership-container {
     display: flex;
-    justify-content: center; 
-    align-items: stretch; /* Ensures equal height */
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin-top: 1rem;
+    justify-content: center; /* Centers the cards horizontally */
+    flex-wrap: wrap; /* Ensures cards wrap if there's not enough space */
+    gap: 2rem; /* Adds space between the cards */
+    margin: 0 auto; /* Centers the container itself */
+    padding: 0; /* Removes unnecessary padding */
+    max-width: 1200px; /* Optional: Control the width on larger screens */
 }
 
+
+
 .membership {
-    width: 300px; /* Fixed width */
+    flex: 1 1 30%;
     background-color: #F5F5FF;
     border-radius: 8px;
     padding: 1.5rem;
@@ -228,6 +236,18 @@ footer {
     justify-content: space-between;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
+    min-width: 300px;
+}
+
+.membership ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.membership ul li {
+    margin-bottom: 0.5rem;
+    padding-left: 0;
 }
 
 .membership:hover {
@@ -236,25 +256,37 @@ footer {
 }
 
 /* Responsive Design */
+/* Mobile View Adjustments */
 @media (max-width: 768px) {
-    nav ul {
+    #offers {
+        display: flex;
         flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    main {
-        padding: 1rem;
+        align-items: center; /* Center horizontally */
+        justify-content: center; /* Center vertically */
+        padding: 1rem; /* Add padding for spacing */
+        min-height: 100vh; /* Ensure it takes the full screen height */
+        box-sizing: border-box; /* Ensure proper calculations */
+        text-align: center; /* Center text alignment */
     }
 
     .membership-container {
+        display: flex;
         flex-direction: column;
-        align-items: center;
+        justify-content: center; /* Center the cards vertically */
+        align-items: center; /* Center horizontally */
+        gap: 1.5rem; /* Space between the cards */
+        width: 100%; /* Ensure full width on smaller screens */
     }
 
     .membership {
-        width: 80%;
+        width: 90%; /* Take up 90% of the screen width */
+        max-width: 400px; /* Prevent the cards from becoming too wide */
+        margin: 0 auto; /* Center each card horizontally */
     }
 }
+
+
+
 
 /* Scroll Animations */
 section {
@@ -268,8 +300,20 @@ section.visible {
     transform: translateY(0);
 }
 
-.membership.hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-}
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0;
+    }
 
+    nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 0.75rem 1rem;
+    }
+}
