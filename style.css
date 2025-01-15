@@ -210,30 +210,53 @@ footer {
 
 /* Membership Cards */
 /* Adjust the membership-container styles */
+/* Membership Cards Container */
 .membership-container {
     display: flex;
-    justify-content: center; /* Centers the cards horizontally */
-    flex-wrap: wrap; /* Ensures cards wrap if there's not enough space */
-    gap: 2rem; /* Adds space between the cards */
-    margin: 0 auto; /* Centers the container itself */
-    padding: 0; /* Removes unnecessary padding */
-    max-width: 1200px; /* Optional: Control the width on larger screens */
+    flex-wrap: wrap; /* Allow wrapping */
+    gap: 1.5rem; /* Space between cards */
+    justify-content: center; /* Center cards horizontally */
+    margin: 0 auto; /* Center the container */
+    padding: 0 1rem; /* Add padding for better mobile layout */
+    max-width: 1200px; /* Constrain the maximum width */
 }
 
-
-
+/* Individual Membership Cards */
 .membership {
-    flex: 1 1 30%;
+    flex: 1 1 calc(33.33% - 2rem); /* Adjust for 3 cards per row with spacing */
     background-color: #F5F5FF;
     border-radius: 8px;
     padding: 1.5rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
-    min-width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect */
+.membership:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .membership-container {
+        flex-direction: column; /* Stack cards vertically */
+        gap: 1.5rem; /* Space between stacked cards */
+        padding: 1rem; /* Add padding for small screens */
+    }
+
+    .membership {
+        flex: 1 1 100%; /* Take full width of the container */
+        max-width: 400px; /* Set a reasonable maximum width */
+        margin: 0 auto; /* Center each card */
+    }
+}
+
+@media (max-width: 480px) {
+    .membership {
+        padding: 1rem; /* Reduce padding for smaller screens */
+    }
 }
 
 .membership ul {
@@ -245,11 +268,6 @@ footer {
 .membership ul li {
     margin-bottom: 0.5rem;
     padding-left: 0;
-}
-
-.membership:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Responsive Design */
@@ -281,6 +299,8 @@ footer {
         margin: 0 auto; /* Center each card horizontally */
     }
 }
+
+
 
 
 
